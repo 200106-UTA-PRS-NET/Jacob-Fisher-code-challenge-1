@@ -5,10 +5,21 @@ namespace PallindromeXunitTests
 {
     public class PallindromeTest
     {
-        [Fact]
-        public void Test1()
+        [Theory]
+        [InlineData("nurses run")]
+        [InlineData("racecaR")]
+        [InlineData("1221")]
+        [InlineData("never odd, or even.")]
+        public void IsPallindrome(string input)
         {
-
+            Assert.True(Pallindrome.Pallindrome.IsPalindrome(input));
+        }
+        [Theory]
+        [InlineData("one two one")]
+        [InlineData("123abccba123")]
+        public void NotPallindrome(string input)
+        {
+            Assert.False(Pallindrome.Pallindrome.IsPalindrome(input));
         }
     }
 }
