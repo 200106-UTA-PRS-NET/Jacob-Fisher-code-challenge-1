@@ -10,6 +10,8 @@ namespace PallindromeXunitTests
         [InlineData("racecaR")]
         [InlineData("1221")]
         [InlineData("never odd, or even.")]
+        [InlineData("")]
+        [InlineData(",..,./,/!@#$%^&*()")]
         public void IsPallindrome(string input)
         {
             Assert.True(Pallindrome.Pallindrome.IsPalindrome(input));
